@@ -11,6 +11,8 @@ before_script:
 script:
 #- ./acceptanceTest.sh
 - mkdir test; cd test; curl -fsSkL fiteagle.org/bootstrap | bash -s init deployFT2 deployFT2sfa testFT2sfa
+after_success:
+- curl http://demo.fiteagle.org/trigger.php?c=integration
 notifications:
   email:
   - alexander.willner@tu-berlin.de
