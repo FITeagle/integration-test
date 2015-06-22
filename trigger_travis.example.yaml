@@ -1,0 +1,14 @@
+github_token: '1234567890123456789012345678901234567890'
+triggers:
+- delete_after: true
+  repositories:
+  - branches: [master, binary-only]
+    slug: FITeagle/integration-test
+  - branches: [master]
+    slug: FITeagle/core
+  trigger_file: /tmp/trigger.txt
+- delete_after: false
+  repositories:
+  - branches: [master]
+    slug: FITeagle/two
+  trigger_file: /tmp/trigger_two.txt
