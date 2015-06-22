@@ -7,7 +7,7 @@ __version__   = 0.1
 
 from travispy import TravisPy
 import yaml
-import os.path
+import os.path,sys
 
 def read_config(filename):
 	with open(filename, 'r') as ymlfile:
@@ -68,7 +68,7 @@ def cfgExample():
 	print yaml.dump(cfgdata)
 
 try:
-	config = read_config("trigger_travis.yaml")
+	config = read_config(os.path.dirname(sys.argv[0])+"/trigger_travis.yaml")
 except Exception, e:
 	print "can't open config file!\nCreate a file named >>trigger_travis.yaml<< with the following contens:"
 	cfgExample()

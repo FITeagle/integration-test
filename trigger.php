@@ -12,6 +12,8 @@ $app_config = array(
 	'integration' => array( 'state_file' => "/tmp/fiteagle_integration-ok.txt")
 );
 
+//print_r($_REQUEST);
+
 if (isset($_REQUEST['component'])){
 	$component = $_REQUEST['component'];
 }else if (isset($_REQUEST['c'])){
@@ -22,7 +24,7 @@ if (isset($_REQUEST['component'])){
 	exit();
 }
 
-if (!empty($component) && $component=="fiteagle") 
+if (!empty($component) && !empty($app_config[$component])) 
 {
 	//	$text = date("c\n");
 	$text = time() . "\n";
