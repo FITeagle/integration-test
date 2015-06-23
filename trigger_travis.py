@@ -9,6 +9,8 @@ from travispy import TravisPy
 import yaml
 import os.path,sys
 
+verbose = True
+
 def read_config(filename):
 	with open(filename, 'r') as ymlfile:
 		config = yaml.load(ymlfile)
@@ -37,8 +39,8 @@ def old_logic(gh_token):
 	build_master=builds_master[0]
 	build_bin=builds_bin[0]
 
-	print "restarting >>binary-only<< build...", build_bin.restart()
-	print "restarting >>master<< build...", build_master.restart()
+	#print "restarting >>binary-only<< build...", build_bin.restart()
+	#print "restarting >>master<< build...", build_master.restart()
 
 def cfgExample():
 	cfgdata = {
@@ -75,14 +77,15 @@ except Exception, e:
 	exit(1)
 
 t=False
-
 if len(config['triggers']):
 	for trigger in  config['triggers']:
 		fname=trigger['trigger_file']
-		#print "file:",fname,"delete:",trigger['delete_after']
+		if verbose :
+			print "file:",fname,"delete:",trigger['delete_after'], "targets:", trigger['repositories']
 		if os.path.isfile(fname):
 			if not t:
 				t = TravisPy.github_auth(config['github_token'])
+			restart_ok = True
 			for r in trigger['repositories']:
 				repo = t.repo(r['slug'])
 				for bname in r['branches']:
@@ -91,18 +94,16 @@ if len(config['triggers']):
 					print "Restarting",repo.slug, "branch", bname, "Build..."
 					if build.restart():
 						print "OK"
-						try:
-							if trigger['delete_after']:
-								os.remove(fname)
-						except Exception, e:
-							print e
 					else:
 						print "Failed!"
-			
+						restart_ok=False
+			try:
+				if trigger['delete_after']:
+					os.remove(fname)
+			except Exception, e:
+				print e
 		else:
-			#print "nothing to do for",fname
+			if verbose :
+				print "nothing to do for",fname
 			pass
 
-
-#latest_build = t.build(repo.last_build_id)
-#latest_build.restart()
