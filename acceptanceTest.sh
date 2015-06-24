@@ -43,7 +43,8 @@ if [ $RET -gt 0 ]; then
 	echo "RET: ${RET}"
 fi
 
-screen -S wildfly -X kill
+${TARGET}/fiteagle.sh stopJ2EE
+#screen -S wildfly -X kill
 #killall -9 java
 #rm -rf ${TARGET}
 
