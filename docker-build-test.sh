@@ -10,6 +10,7 @@ runcmd() {
 }
 
 if [ "$1" = "-r" ]; then
+	runcmd "docker rmi ft2-buildtest"
 	runcmd "docker build --tag=ft2-buildtest --rm $(pwd)/build-test-docker/" || exit
 fi
 

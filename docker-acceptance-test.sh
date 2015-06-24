@@ -8,6 +8,7 @@ runcmd() {
 }
 
 if [ "$1" = "-r" ]; then
+	runcmd "docker rmi ft2-actest"
 	runcmd "docker build --tag=ft2-actest --rm ." || exit
 fi
 
