@@ -54,6 +54,10 @@ generateRequestXml() {
     echo "    </params>"
     echo "</methodCall>"
 }
+
+_FILTER=cat
+which xmllint && _FILTER="xmllint --format -"
+
 rpcxml=rpc$$.xml
 generateRequestXml "$@" > $rpcxml
 [ "$verbose" = "--verbose" ] && cat "$rpcxml"
@@ -61,6 +65,6 @@ generateRequestXml "$@" > $rpcxml
 #curl -kf $verbose --data "@$rpcxml" "$servUrl" 
 XMLRES=$(curl -kf $verbose --data "@$rpcxml" "$servUrl" 2>/dev/null)
 RET=$?
-[ $RET = 0 ] && echo $XMLRES | xmllint --format -
+[ $RET = 0 ] && echo $XMLRES | ${_FILTER}
 \rm -f $rpcxml
 exit $RET
