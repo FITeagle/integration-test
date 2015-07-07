@@ -1,7 +1,7 @@
 #!/usr/bin/env python2.7
  
 __author__    = 'Bjoern Riemer <bjoern.riemer@tu-berlin.de>'
-__copyright__ = "Bjoern Riemer. TUB"
+__copyright__ = "2015 Bjoern Riemer. TUB"
 __licence__   = "GPL"
 __version__   = 0.1
 
@@ -91,11 +91,16 @@ if len(config['triggers']):
 				for bname in r['branches']:
 					branch = t.branch(repo_id_or_slug=repo.slug,name=bname)
 					build = t.builds(repository_id=branch.repository_id,number=branch.number)[0]
-					print "Restarting",repo.slug, "branch", bname, "Build..."
+					if verbose :
+						print "Restarting",repo.slug, "branch", bname, "Build..."
 					if build.restart():
-						print "OK"
+						if verbose :
+							print "OK"
 					else:
-						print "Failed!"
+						if verbose :
+							print "Failed!"
+						else:
+							print "Restart of ",repo.slug, "branch", bname, "Build failed!"
 						restart_ok=False
 			try:
 				if trigger['delete_after']:
