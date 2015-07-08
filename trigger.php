@@ -9,6 +9,7 @@
 */
 $app_config = array(
 	'fiteagle' => array( 'state_file' => "/tmp/fiteagle_module-ci-ok.txt"),
+	'omn' => array( 'state_file' => "/tmp/fiteagle_module-ci-ok.txt"),
 	'integration' => array( 'state_file' => "/tmp/fiteagle_integration-ok.txt")
 );
 
