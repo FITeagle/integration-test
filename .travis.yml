@@ -10,6 +10,9 @@ branches:
   only:
   - master
   - binary-only
+cache:
+  directories:
+  - $HOME/.m2
 script:
 #- ./acceptanceTest.sh
 - mkdir test; cd test; curl -fsSkL fiteagle.org/bootstrap | bash -s init deployFT2 deployFT2sfa testFT2sfa
