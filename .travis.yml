@@ -15,7 +15,7 @@ cache:
   - $HOME/.m2
 script:
 #- ./acceptanceTest.sh
-- mkdir test; cd test; curl -fsSkL fiteagle.org/bootstrap | bash -s init deployFT2 deployFT2sfa testFT2sfa
+- mkdir test; cd test; curl -fsSkL fiteagle.org/bootstrap -o fiteagle.sh && bash fiteagle.sh init deployFT2 deployFT2sfa testFT2sfa
 after_success:
 - curl http://demo.fiteagle.org/trigger.php?c=integration
 notifications:
