@@ -56,7 +56,7 @@ generateRequestXml() {
 }
 
 _FILTER=cat
-which xmllint && _FILTER="xmllint --format -"
+[ -f $(which xmllint) ] && _FILTER="xmllint --format -"
 
 rpcxml=rpc$$.xml
 generateRequestXml "$@" > $rpcxml

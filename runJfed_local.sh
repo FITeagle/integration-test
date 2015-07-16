@@ -29,6 +29,13 @@ DIR=$(ls -td test-result*|head -n1)
 if [[ $(grep " failheader" -c ./${DIR}/result.html) > 0 ]]; then
   echo "test failed!"
   #cat ./${DIR}/result.html
+  if [[ -f /.dockerenv ]] && [[ -d /opt/results ]]; then
+    cp -a $DIR /opt/results
+    echo "PWD: $PWD"
+    ##/opt/fiteagle/integration-test/build/server/wildfly/standalone/deployments/motor.war:q
+    ##PWD: /opt/fiteagle/integration-test
+    cp ./build/server/wildfly/standalone/log/server.log /opt/results
+  fi
 else
   echo "test OK"
 fi

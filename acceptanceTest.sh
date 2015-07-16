@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 PWD=$(pwd)
 #TARGET=$(mktemp -d 2>/dev/null || mktemp -d -t "fiteagle")
-TARGET="${PWD}/test_dir"
+TARGET="${PWD}/build"
 echo "using TARGET: ${TARGET} HOME: ${HOME} PWD: ${PWD}"
 rm -rf ${TARGET}
 mkdir -p ${TARGET}
@@ -12,6 +12,7 @@ curl -sSL https://github.com/FITeagle/bootstrap/raw/master/fiteagle.sh -o fiteag
 chmod +x ${TARGET}/fiteagle.sh
 ${TARGET}/fiteagle.sh deployFT2binary deployFT2sfaBinary
 curl -sSL https://github.com/FITeagle/core/raw/master/federationManager/src/main/resources/ontologies/defaultFederation.ttl -o ${HOME}/.fiteagle/Federation.ttl
+cp ${TARGET}/../conf/MotorGarage.properties ${HOME}/.fiteagle/
 ${TARGET}/fiteagle.sh startJ2EE
 
 cd ${PWD}
