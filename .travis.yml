@@ -18,7 +18,7 @@ script:
 - mkdir -p "${HOME}/.fiteagle"; cp ${TRAVIS_BUILD_DIR}/conf/MotorGarage.properties ${HOME}/.fiteagle/
 - mkdir test; cd test; curl -fsSkL fiteagle.org/bootstrap -o fiteagle.sh && bash fiteagle.sh init deployFT2 deployFT2sfa testFT2sfa
 after_success:
-- curl http://demo.fiteagle.org/trigger.php?c=integration
+- curl "http://demo.fiteagle.org/trigger.php?c=integration-src"
 notifications:
   email:
   - alexander.willner@tu-berlin.de

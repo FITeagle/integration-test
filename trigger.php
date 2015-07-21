@@ -10,7 +10,8 @@
 $app_config = array(
 	'fiteagle' => array( 'state_file' => "/tmp/fiteagle_module-ci-ok.txt"),
 	'omn' => array( 'state_file' => "/tmp/fiteagle_module-ci-ok.txt"),
-	'integration' => array( 'state_file' => "/tmp/fiteagle_integration-ok.txt")
+	'integration' => array( 'state_file' => "/tmp/fiteagle_integration-ok.txt"),
+	'integration-src' => array('ignore' => 1)
 );
 
 //print_r($_REQUEST);
@@ -31,8 +32,16 @@ if (!empty($component) && !empty($app_config[$component]))
 	$text = time() . "\n";
 	if (isset($app_config[$component]['state_file']))
 	{
-		file_put_contents($app_config[$component]['state_file'],$text);
-		echo "OK\n";
+		if (!file_exists($app_config[$component]['state_file'])){
+			file_put_contents($app_config[$component]['state_file'],$text);
+			echo "OK\n";
+		}else{
+			echo "OK; already triggered\n";
+		}
+	}
+	elseif (isset($app_config[$component]['ignore']))
+	{
+		echo "OK; Ignored\n";
 	}
 	else
 	{
