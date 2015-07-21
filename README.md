@@ -8,7 +8,7 @@
 Testing the final builds all together.
 Please have a look at [http://fiteagle.org](http://fiteagle.org) for details.
 
-## Test cycle
+## Continous Integration cycle
  1. git commit into component
  2. components ci-test successful
  3. upload of build artefacts to snapshot repository
