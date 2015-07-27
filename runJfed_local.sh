@@ -35,6 +35,12 @@ if [[ $(grep " failheader" -c ./${DIR}/result.html) > 0 ]]; then
     ##/opt/fiteagle/integration-test/build/server/wildfly/standalone/deployments/motor.war:q
     ##PWD: /opt/fiteagle/integration-test
     cp ./build/server/wildfly/standalone/log/server.log /opt/results
+    chmod o+w -R /opt/results
+  fi
+  if [[ -n ${TRAVIS_BUILD_DIR} ]]; then
+    echo "##########################################################\n## results ##################\n##########################################\n\n"
+    cat "${TRAVIS_BUILD_DIR}/test/integration-test/test-results-TestAggregateManager3-createsliver-*/result.html"
+    echo "##########################################################\n## end ######################\n##########################################\n\n"
   fi
 else
   echo "test OK"
