@@ -41,6 +41,7 @@ if [[ $(grep " failheader" -c ./${DIR}/result.html) > 0 ]]; then
     printf "##########################################################\n## results ##################\n##########################################\n\n"
     cat ${DIR}/result.html
     printf "##########################################################\n## end ######################\n##########################################\n\n"
+    curl http://foo:bar@demo.fiteagle.org:8081/paste -X POST -T ${DIR}/result.html
   fi
 else
   echo "test OK"
