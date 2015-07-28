@@ -37,12 +37,13 @@ if [[ $(grep " failheader" -c ./${DIR}/result.html) > 0 ]]; then
     chmod o+w -R /opt/results
   fi
   if [[ -n ${TRAVIS_BUILD_DIR} ]]; then
-    printf "\n##########################################################\n## uploading results ########\n##########################################\n\n"
+    printf "\n#############################\n## uploading results ########\n#############################\n\n"
     echo "results.html: "
     curl http://foo:bar@demo.fiteagle.org:8081/paste -X POST -T ${DIR}/result.html
+    echo ""
     echo "server.log: "
-    curl http://foo:bar@demo.fiteagle.org:8081/paste -X POST -T ./build/server/wildfly/standalone/log/server.log
-    printf "\n##########################################################\n## end ######################\n##########################################\n\n"
+    curl http://foo:bar@demo.fiteagle.org:8081/paste -X POST -T "${TRAVIS_BUILD_DIR}/test/server/wildfly/standalone/log/server.log"
+    printf "\n#############################\n## end ######################\n#############################\n\n"
   fi
 else
   echo "test OK"
