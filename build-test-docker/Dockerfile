@@ -6,6 +6,7 @@ WORKDIR /opt/fiteagle
 RUN mkdir -p /root/.m2
 VOLUME /root/.m2
 
+RUN mkdir -p $HOME/.fiteagle && curl -fsSL https://raw.githubusercontent.com/FITeagle/integration-test/master/conf/MotorGarage.properties -o $HOME/.fiteagle/MotorGarage.properties
 CMD curl -fsSL https://raw.githubusercontent.com/FITeagle/bootstrap/master/fiteagle.sh | bash -s init deployFT2 deployFT2sfa testFT2sfa
 #CMD curl -fsSL https://raw.githubusercontent.com/FITeagle/bootstrap/master/fiteagle.sh | bash -s init deployFT2 deployFT2sfa testFT2sfa; \
 #	cd /opt/fiteagle/; \
