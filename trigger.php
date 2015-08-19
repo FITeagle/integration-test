@@ -49,4 +49,8 @@ if (!empty($component) && !empty($app_config[$component]))
 		http_response_code(500);
 		echo "config error!";
 	}
+}else{
+	http_response_code(404);
+	echo "Unknown component\n";
+	exit();
 }
