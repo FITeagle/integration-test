@@ -4,8 +4,8 @@ jdk:
 sudo: false
 env:
   matrix:
-  -_VARIANT=bin
-  -_VARIANT=src
+  - _VARIANT=bin
+  - _VARIANT=src
 addons:
   apt:
     packages:
