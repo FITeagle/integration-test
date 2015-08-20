@@ -97,10 +97,7 @@ if len(config['triggers']):
 						if verbose :
 							print "OK"
 					else:
-						if verbose :
-							print "Failed!"
-						else:
-							print "Restart of ",repo.slug, "branch", bname, "Build failed!"
+						print "Restart of Build for",repo.slug, "branch", bname, "failed!"
 						restart_ok=False
 			try:
 				if trigger['delete_after']:
