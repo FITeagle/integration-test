@@ -7,7 +7,7 @@ rm -rf ${TARGET}
 mkdir -p ${TARGET}
 mkdir -p ${HOME}/.fiteagle
 cd ${TARGET}
-#export WILDFLY_HOME="${TARGET}/server/wildfly"
+export WILDFLY_HOME="${TARGET}/server/wildfly"
 curl -sSL https://github.com/FITeagle/bootstrap/raw/master/fiteagle.sh -o fiteagle.sh
 chmod +x ${TARGET}/fiteagle.sh
 ${TARGET}/fiteagle.sh deployFT2binary deployFT2sfaBinary

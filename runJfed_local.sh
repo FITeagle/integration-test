@@ -42,7 +42,8 @@ if [[ $(grep " failheader" -c ./${DIR}/result.html) > 0 ]]; then
     curl http://foo:bar@demo.fiteagle.org:8081/paste -X POST -T ${DIR}/result.html
     echo ""
     echo "server.log: "
-    curl http://foo:bar@demo.fiteagle.org:8081/paste -X POST -T "${TRAVIS_BUILD_DIR}/test/server/wildfly/standalone/log/server.log"
+    curl http://foo:bar@demo.fiteagle.org:8081/paste -X POST -T "${TRAVIS_BUILD_DIR}/*/server/wildfly/standalone/log/server.log"
+    curl http://foo:bar@demo.fiteagle.org:8081/paste -X POST -T "${WILDFLY_HOME}/standalone/log/server.log"
     printf "\n#############################\n## end ######################\n#############################\n\n"
   fi
 else
