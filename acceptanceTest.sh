@@ -38,15 +38,17 @@ RET=$?
 echo "RET: ${RET}"
 
 if [ $RET -gt 0 ]; then
-	sleep 10
+	echo "retry failed test...."
+	echo "touching .war files.."
+	[ -f ${WILDFLY_HOME}/deployments/motor.war ] && touch ${WILDFLY_HOME}/deployments/motor.war
+	[ -f ${WILDFLY_HOME}/deployments/sshService.war ] && touch ${WILDFLY_HOME}/deployments/sshService.war
+	sleep 30
 	./runJfed_local.sh
 	RET=$?
 	echo "RET: ${RET}"
 fi
 
 ${TARGET}/fiteagle.sh stopJ2EE
-#screen -S wildfly -X kill
-#killall -9 java
 #rm -rf ${TARGET}
 
 exit $RET
