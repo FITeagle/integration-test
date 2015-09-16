@@ -40,8 +40,8 @@ echo "RET: ${RET}"
 if [ $RET -gt 0 ]; then
 	echo "retry failed test...."
 	echo "touching .war files.."
-	[ -f ${WILDFLY_HOME}/deployments/motor.war ] && touch ${WILDFLY_HOME}/deployments/motor.war
-	[ -f ${WILDFLY_HOME}/deployments/sshService.war ] && touch ${WILDFLY_HOME}/deployments/sshService.war
+	[ -f ${WILDFLY_HOME}/standalone/deployments/motor.war ] && touch ${WILDFLY_HOME}/standalone/deployments/motor.war
+	[ -f ${WILDFLY_HOME}/standalone/deployments/sshService.war ] && touch ${WILDFLY_HOME}/standalone/deployments/sshService.war
 	sleep 30
 	./runJfed_local.sh
 	RET=$?
