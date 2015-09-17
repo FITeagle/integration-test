@@ -17,7 +17,7 @@ java \
   --test-class be.iminds.ilabt.jfed.lowlevel.api.test.TestAggregateManager3 \
   --authorities-file conf/cli.authorities \
   --debug \
-  --context-file conf/cli.localhost.properties \
+  --context-file conf/cli.properties \
   --group createsliver
 #  --group nonodelogin
 
