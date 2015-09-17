@@ -3,22 +3,21 @@
 _DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 cd ${_DIR}
 
-#_VERSION="newest-dev-release"
-_VERSION="5.4-dev/r2339"
-_URL="http://jfed.iminds.be/releases/${_VERSION}/jar/jfed_cli.tar.gz"
+_VERSION="229"
+_URL="http://jfed.iminds.be/releases/develop/${_VERSION}/jar/jfed_cli.tar.gz"
 _PATH="jfed_cli"
 
-if [ ! -d "${_PATH}" ]; then 
+if [ ! -d "${_PATH}" ]; then
   echo "downloading $_URL"
   curl -L "${_URL}" | tar -zx
 fi
 
 java \
   -jar "${_PATH}/automated-testing.jar" \
-  -c be.iminds.ilabt.jfed.lowlevel.api.test.TestAggregateManager3 \
+  --test-class be.iminds.ilabt.jfed.lowlevel.api.test.TestAggregateManager3 \
   --authorities-file conf/cli.authorities \
   --debug \
-   -p conf/cli.properties \
+  --context-file conf/cli.localhost.properties \
   --group createsliver
 #  --group nonodelogin
 
