@@ -18,7 +18,7 @@ java \
   --authorities-file conf/cli.authorities \
   --debug \
   --context-file conf/cli.properties \
-  --group 
+  --group nonodelogin
 
 RET=$?
 echo "jfed error code ${RET}"
