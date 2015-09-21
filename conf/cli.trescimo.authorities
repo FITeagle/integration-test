@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<authorities xmlns="http://jfed.iminds.be/authority">
+    <authority>
+        <urn>urn:publicid:IDN+localhost+authority+root</urn>
+        <hrn>localhost</hrn>
+        <urls>
+            <serverurl>
+                <servertype role="Slice Authority" version="1"/>
+                <url>https://federation.trescimo.eu:8443/sfa/api/sa/v1</url>
+            </serverurl>
+            <serverurl>
+                <servertype role="Aggregate Manager" version="3"/>
+                <url>https://federation.trescimo.eu:8443/sfa/api/am/v3</url>
+            </serverurl>
+        </urls>
+        <proxies/>
+        <type></type>
+        <source>User</source>
+        <reconnectEachTime>false</reconnectEachTime>
+        <pemSslTrustCert>
+-----BEGIN CERTIFICATE-----
+MIIEgzCCA2ugAwIBAgIJAOPXiWXFMaZGMA0GCSqGSIb3DQEBCwUAMGgxCzAJBgNV
+BAYTAkRFMQ8wDQYDVQQIDAZCZXJsaW4xDzANBgNVBAcMBkJlcmxpbjESMBAGA1UE
+CgwJVFUgQmVybGluMSMwIQYDVQQDDBpUcmVzY2ltbyBGZWRlcmF0aW9uIFNlcnZl
+cjAeFw0xNTA4MjcxNTU2NTNaFw0xNjA4MjYxNTU2NTNaMGgxCzAJBgNVBAYTAkRF
+MQ8wDQYDVQQIDAZCZXJsaW4xDzANBgNVBAcMBkJlcmxpbjESMBAGA1UECgwJVFUg
+QmVybGluMSMwIQYDVQQDDBpUcmVzY2ltbyBGZWRlcmF0aW9uIFNlcnZlcjCCASIw
+DQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAJk5WY4Jnf+cuuFa0f0wRmSn2CqS
+aG7Auvtwx3+LKKKGQXSxAfqdjoK8LN0329vuuiiPgusxG7Y45K+JZF77gKcTnH2x
+FVU6PViCjMO//ZHEuYVKIDPnqMDK2NgnlngcMMRtl3bxwRJSYlOMKNnlXbIbO/ub
+x67AiWpedEbyIEWEkJpLoL15RmG88wSA9yfmU+aBqL3APG9ov93AQ0oFSe3eOv3N
+vvXCIXYY010hFAJfLFIUKDeCbyZ4U6gD1HHY9YApO0/bXt7vgqJGocmymqEaQqle
+8uyzITj9h0rgAjYNqE4WwsQ5S6ZwbO25cgxouhUrDdwkMV48SEkKcKcc5F8CAwEA
+AaOCAS4wggEqMB0GA1UdDgQWBBRW+4/OuSmYNZANG9G2DZ3ENqfSoDAfBgNVHSME
+GDAWgBRW+4/OuSmYNZANG9G2DZ3ENqfSoDAJBgNVHRMEAjAAMAsGA1UdDwQEAwIF
+oDCBoQYDVR0RBIGZMIGWghZmZWRlcmF0aW9uLnRyZXNjaW1vLmV1ghFkZW1vLmZp
+dGVhZ2xlLm9yZ4Y2dXJuOnB1YmxpY2lkOklETitmZWRlcmF0aW9uLnRyZXNjaW1v
+LmV1K2F1dGhvcml0eStyb290hjF1cm46cHVibGljaWQ6SUROK2RlbW8uZml0ZWFn
+bGUub3JnK2F1dGhvcml0eStyb290MCwGCWCGSAGG+EIBDQQfFh1PcGVuU1NMIEdl
+bmVyYXRlZCBDZXJ0aWZpY2F0ZTANBgkqhkiG9w0BAQsFAAOCAQEAVuG9TzoG06qT
+pmQ/3vPhV0TGbt6ieq+JFjCv8rX8aFztteLDnEY4fpS4Xz7CqypCtU0E2GXDrzba
+fLSX+dKv40ZB+X+0Z6A9aAs+nr4umYdhHHY6fW5j8d8pXEEAUMDjZsWagW+Rlb4c
+N3LlQ2OhADqEQ7TVXt8Zd0OtNrjDSYCGPXfsHmN+s3iZ/273z17qkbf3qgZ3LBiW
+bueNIBuNxR92sHbdreoU4GG5TYgzuiO4KZTT6pmno4ch0/W+V2/I/IfawVRZ6ij5
+nqgt53ktmZ/E/iTwZSoXpLn56lGJmXV3a7wXyZgEKC5hwW0g3rr9XCPEh7J7a/ec
+JcAqUi6XJg==
+-----END CERTIFICATE-----
+</pemSslTrustCert>
+        <allowedCertificateHostnameAliases>
+            <alias>demo.fiteagle.org</alias>
+        </allowedCertificateHostnameAliases>
+    </authority>
+</authorities>
