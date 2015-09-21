@@ -3,8 +3,8 @@
    <node
          client_id="demo-motor-1"
          component_name="MotorGarage-1"
-         component_manager_id="urn:publicid:IDN+localhost+authority+root"
-         component_id="urn:publicid:IDN+localhost+node+http%3A%2F%2Flocalhost%2Fresource%2FMotorGarage-1">
+         component_manager_id="urn:publicid:IDN+trescimo+authority+root"
+         component_id="urn:publicid:IDN+trescimo+node+http%3A%2F%2Flocalhost%2Fresource%2FMotorGarage-1">
        <sliver_type name="http://open-multinet.info/ontology/resource/motor#Motor"/>
    </node>
 </rspec>
