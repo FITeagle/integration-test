@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<authorities xmlns="http://jfed.iminds.be/authority">
+<authority>
+        <urn>urn:publicid:IDN+trescimo+authority+root</urn>
+        <hrn>trescimo</hrn>
+        <urls>
+            <serverurl>
+                <servertype role="Aggregate Manager" version="3"/>
+                <url>https://federation.trescimo.eu:443/sfa/api/am/v3</url>
+            </serverurl>
+            <serverurl>
+                <servertype role="Slice Authority" version="1"/>
+                <url>https://federation.trescimo.eu:443/sfa/api/sa/v1</url>
+            </serverurl>
+        </urls>
+        <proxies/>
+        <type></type>
+        <source>User</source>
+        <reconnectEachTime>false</reconnectEachTime>
+        <pemSslTrustCert>-----BEGIN CERTIFICATE-----
+MIID+DCCAuCgAwIBAgIJAOlcuXTsVxupMA0GCSqGSIb3DQEBBQUAMIGeMQswCQYD
+VQQGEwJERTEPMA0GA1UECBMGQmVybGluMQ8wDQYDVQQHEwZCZXJsaW4xLTArBgNV
+BAoUJFRlY2huaXNjaGUgVW5pdmVyc2l0w6R0IEJlcmxpbiAoVFVCKTELMAkGA1UE
+CxMCQVYxETAPBgNVBAMTCHRyZXNjaW1vMR4wHAYJKoZIhvcNAQkBFg9hbGxAdHJl
+c2NpbW8uZXUwHhcNMTQxMjE3MTI0NTQ2WhcNMjQxMjE0MTI0NTQ2WjCBnjELMAkG
+A1UEBhMCREUxDzANBgNVBAgTBkJlcmxpbjEPMA0GA1UEBxMGQmVybGluMS0wKwYD
+VQQKFCRUZWNobmlzY2hlIFVuaXZlcnNpdMOkdCBCZXJsaW4gKFRVQikxCzAJBgNV
+BAsTAkFWMREwDwYDVQQDEwh0cmVzY2ltbzEeMBwGCSqGSIb3DQEJARYPYWxsQHRy
+ZXNjaW1vLmV1MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAml9syyTh
+wum5cG9Yze9mj8AWoQwjMMKIzd7tYnUgqUM+az0YvBu2FaIkU7fKX5bTQ4slmlOJ
+J0w93xAC37F3jLkLQxo1AI0FOpJgoSlYU+b3MAxy8/dkEJl1A4HBXjrhlxEBFUc2
+Yr04iE0DGTPlY4xHPzl/TFEenjiviQIJMQE47udqIApECdDp/6co18y5d/zuZQsm
+1G9cr/W11UHAP0uyk4TzCMUPv4UBWcpVj7cJBxxwNOhNNu6rBXfsM4poW8KzSCCK
+cPdSNbvmEZ5fNaHZSv0DfEP5wF1In5Dp7qFZ8Yefr58dBsdP6njGxgz1a9Rlojim
+2NCiswCBo4E6ZwIDAQABozcwNTAzBgNVHREELDAqhih1cm46cHVibGljaWQ6SURO
+K3RyZXNjaW1vK2F1dGhvcml0eStyb290MA0GCSqGSIb3DQEBBQUAA4IBAQBtcZIF
+IV2rIDMICKLaOnNw/R8E4tvIQcGuw8789OksGJhqFZ6a9T+Vc5Nc+RW6vBKm58P4
+we9ewTk/PiGzFR+YidZjUHspWVn3QPcDKzTuctCgVaRC1+T5PS5UI2Iv/sNFlvxX
+ZCsPyyD7T5yo8QDKaDbibgWoOHRVDwENAQbng6k+qYEpueVE2OUC7JuxWG/3RMEu
+ZLslPcGd+wR9SxZ5KPbEZDwEGGNcbpmUv0m+rkorfou5UtB+msLhJI34X6djuEw3
+Aer2cZRXGPh9+3jP+gcHsuGoXiNz38geB8ENCt7KcRJWTsD7M1mv80AhILtjrEF6
+bdE9k+9DKF3pChCY
+-----END CERTIFICATE-----
+        </pemSslTrustCert>
+        <allowedCertificateHostnameAliases>
+            <alias>trescimo</alias>
+        </allowedCertificateHostnameAliases>
+    </authority>
+</authorities>
