@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <authorities xmlns="http://jfed.iminds.be/authority">
     <authority>
-        <urn>urn:publicid:IDN+localhost+authority+root</urn>
+        <urn>urn:publicid:IDN+localhost+authority+cm</urn>
         <hrn>localhost</hrn>
         <urls>
             <serverurl>

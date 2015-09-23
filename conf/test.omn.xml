@@ -9,7 +9,7 @@
     <j.3:hasResource>
       <j.2:Node rdf:about="http://open-multinet.info/example#demo-motor-1">
         <j.3:isResourceOf rdf:resource="http://open-multinet.info/example#request"/>
-        <j.1:managedBy rdf:resource="urn:publicid:IDN+localhost+authority+root"/>
+        <j.1:managedBy rdf:resource="urn:publicid:IDN+localhost+authority+cm"/>
         <j.1:implementedBy>
           <rdf:Description rdf:about="http://localhost/resource/MotorGarage-1">
             <j.1:hasComponentName>MotorGarage-1</j.1:hasComponentName>

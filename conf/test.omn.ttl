@@ -22,7 +22,7 @@
         <http://open-multinet.info/ontology/omn-lifecycle#implementedBy>
                 <http://localhost/resource/MotorGarage-1> ;
         <http://open-multinet.info/ontology/omn-lifecycle#managedBy>
-                <urn:publicid:IDN+localhost+authority+root> ;
+                <urn:publicid:IDN+localhost+authority+cm> ;
         <http://open-multinet.info/ontology/omn-resource#hasSliverType>
                 <urn:uuid:45f64280-be2e-4078-ab88-95f5f5001284> .
 
@@ -30,4 +30,3 @@
         a       <http://open-multinet.info/ontology/omn-resource#SliverType> ;
         <http://open-multinet.info/ontology/omn-lifecycle#hasSliverName>
                 "http://open-multinet.info/ontology/resource/motor#Motor" .
-
