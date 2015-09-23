@@ -1,0 +1,33 @@
+<http://open-multinet.info/example#request>
+        a       <http://open-multinet.info/ontology/omn#Topology> , <http://open-multinet.info/ontology/omn-lifecycle#Request> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Request" ;
+        <http://open-multinet.info/ontology/omn#hasResource>
+                <http://open-multinet.info/example#demo-motor-1> .
+
+<http://localhost/resource/MotorGarage-1>
+        <http://open-multinet.info/ontology/omn-lifecycle#hasComponentName>
+                "MotorGarage-1" .
+
+<http://open-multinet.info/example#demo-motor-1>
+        a       <http://open-multinet.info/ontology/omn-resource#Node> , <http://open-multinet.info/ontology/resource/motor#Motor> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "demo-motor-1" ;
+        <http://open-multinet.info/ontology/omn#isResourceOf>
+                <http://open-multinet.info/example#request> ;
+        <http://open-multinet.info/ontology/omn-lifecycle#hasComponentID>
+                "urn:publicid:IDN+localhost+node+http%3A%2F%2Flocalhost%2Fresource%2FMotorGarage-1" ;
+        <http://open-multinet.info/ontology/omn-lifecycle#hasID>
+                "demo-motor-1" ;
+        <http://open-multinet.info/ontology/omn-lifecycle#implementedBy>
+                <http://localhost/resource/MotorGarage-1> ;
+        <http://open-multinet.info/ontology/omn-lifecycle#managedBy>
+                <urn:publicid:IDN+localhost+authority+root> ;
+        <http://open-multinet.info/ontology/omn-resource#hasSliverType>
+                <urn:uuid:45f64280-be2e-4078-ab88-95f5f5001284> .
+
+<urn:uuid:45f64280-be2e-4078-ab88-95f5f5001284>
+        a       <http://open-multinet.info/ontology/omn-resource#SliverType> ;
+        <http://open-multinet.info/ontology/omn-lifecycle#hasSliverName>
+                "http://open-multinet.info/ontology/resource/motor#Motor" .
+

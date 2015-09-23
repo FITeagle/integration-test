@@ -1,0 +1,32 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:j.0="http://open-multinet.info/ontology/resource/motor#"
+    xmlns:j.1="http://open-multinet.info/ontology/omn-lifecycle#"
+    xmlns:j.2="http://open-multinet.info/ontology/omn-resource#"
+    xmlns:j.3="http://open-multinet.info/ontology/omn#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <j.3:Topology rdf:about="http://open-multinet.info/example#request">
+    <j.3:hasResource>
+      <j.2:Node rdf:about="http://open-multinet.info/example#demo-motor-1">
+        <j.3:isResourceOf rdf:resource="http://open-multinet.info/example#request"/>
+        <j.1:managedBy rdf:resource="urn:publicid:IDN+localhost+authority+root"/>
+        <j.1:implementedBy>
+          <rdf:Description rdf:about="http://localhost/resource/MotorGarage-1">
+            <j.1:hasComponentName>MotorGarage-1</j.1:hasComponentName>
+          </rdf:Description>
+        </j.1:implementedBy>
+        <j.1:hasComponentID>urn:publicid:IDN+localhost+node+http%3A%2F%2Flocalhost%2Fresource%2FMotorGarage-1</j.1:hasComponentID>
+        <j.1:hasID>demo-motor-1</j.1:hasID>
+        <j.2:hasSliverType>
+          <j.2:SliverType rdf:about="urn:uuid:ef686974-d625-4b2f-ad27-e78116adc587">
+            <j.1:hasSliverName>http://open-multinet.info/ontology/resource/motor#Motor</j.1:hasSliverName>
+          </j.2:SliverType>
+        </j.2:hasSliverType>
+        <rdf:type rdf:resource="http://open-multinet.info/ontology/resource/motor#Motor"/>
+        <rdfs:label>demo-motor-1</rdfs:label>
+      </j.2:Node>
+    </j.3:hasResource>
+    <rdfs:label>Request</rdfs:label>
+    <rdf:type rdf:resource="http://open-multinet.info/ontology/omn-lifecycle#Request"/>
+  </j.3:Topology>
+</rdf:RDF>
