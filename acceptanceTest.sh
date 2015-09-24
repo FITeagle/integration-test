@@ -10,17 +10,16 @@ cd ${TARGET}
 export WILDFLY_HOME="${TARGET}/server/wildfly"
 curl -sSL https://github.com/FITeagle/bootstrap/raw/master/fiteagle.sh -o fiteagle.sh
 chmod +x ${TARGET}/fiteagle.sh
-${TARGET}/fiteagle.sh deployFT2binary deployFT2sfaBinary
-curl -sSL https://github.com/FITeagle/core/raw/master/federationManager/src/main/resources/ontologies/defaultFederation.ttl -o ${HOME}/.fiteagle/Federation.ttl
+${TARGET}/fiteagle.sh init
 cp ${TARGET}/../conf/MotorGarage.properties ${HOME}/.fiteagle/
-${TARGET}/fiteagle.sh startJ2EE
+${TARGET}/fiteagle.sh startJ2EE sleep-20 deployFT2binary deployFT2sfaBinary
 
 cd ${PWD}
 pwd
 ## HACK
 cd ..
 
-echo "waiting for server to be ready..."
+echo "waiting for server to be ready (by polling sfa/GetVersion via xmlrpc)..."
 CNT=0
 while [[ ! $(./xmlrpc-client.sh -t https://localhost:8443/sfa/api/am/v3 GetVersion) ]]; do
 	echo sleep 15
@@ -29,6 +28,7 @@ while [[ ! $(./xmlrpc-client.sh -t https://localhost:8443/sfa/api/am/v3 GetVersi
 	if [ ${CNT} -gt "20" ]; then
 		echo "cnt:" ${CNT}
 		echo timeout !
+		${TARGET}/fiteagle.sh stopJ2EE
 		screen -S wildfly -X kill
 		exit 1
 	fi
