@@ -25,7 +25,8 @@ RET=$?
 echo "jfed error code ${RET}"
 
 DIR=$(ls -td test-result*|head -n1)
-if [[ $(grep " failheader" -c ./${DIR}/result.html) > 0 ]]; then
+#if [[ $(grep " failheader" -c ./${DIR}/result.html) > 0 ]]; then
+if [[ $RET -gt 0 ]]
   
   echo "test failed!"
 
