@@ -39,6 +39,7 @@ if [[ $RET -gt 0 ]]; then
   fi
 
   if [[ -n ${TRAVIS_BUILD_DIR} ]]; then
+    export WILDFLY_HOME=../server/wildfly
     printf "\n#############################\n## uploading results ########\n#############################\n\n"
     echo "results.html: "
     curl http://foo:bar@demo.fiteagle.org:8081/paste -X POST -T ${DIR}/result.html
