@@ -39,13 +39,14 @@ if [[ $RET -gt 0 ]]; then
   fi
 
   if [[ -n ${TRAVIS_BUILD_DIR} ]]; then
-    export WILDFLY_HOME=../server/wildfly
+    [ -z ${WILDFLY_HOME} ] && export WILDFLY_HOME=../server/wildfly
     printf "\n#############################\n## uploading results ########\n#############################\n\n"
     echo "results.html: "
-    curl http://foo:bar@demo.fiteagle.org:8081/paste -X POST -T ${DIR}/result.html
-    echo ""
-    echo "server.log: "
-    curl http://foo:bar@demo.fiteagle.org:8081/paste -X POST -T "${WILDFLY_HOME}/standalone/log/server.log"
+    [ -f ${DIR}/result.html ] && curl http://foo:bar@demo.fiteagle.org:8081/paste -X POST -T ${DIR}/result.html
+    echo; echo "fiteagle.log: "
+    [ -f ${WILDFLY_HOME}server/wildfly/standalone/log/fiteagle.log ] && curl http://foo:bar@demo.fiteagle.org:8081/paste -X POST -T ${WILDFLY_HOME}server/wildfly/standalone/log/fiteagle.log
+    echo; echo "server.log: "
+    [ -f ${WILDFLY_HOME}/standalone/log/server.log ] && curl http://foo:bar@demo.fiteagle.org:8081/paste -X POST -T "${WILDFLY_HOME}/standalone/log/server.log"
     printf "\n#############################\n## end ######################\n#############################\n\n"
   fi
 
