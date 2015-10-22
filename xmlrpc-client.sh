@@ -55,8 +55,7 @@ generateRequestXml() {
     echo "</methodCall>"
 }
 
-_FILTER=cat
-[ -f $(which xmllint) ] && _FILTER="xmllint --format -"
+if [ -f "$(which xmllint)" ] ; then _FILTER="xmllint --format -" else _FILTER=cat; fi
 
 rpcxml=rpc$$.xml
 generateRequestXml "$@" > $rpcxml
