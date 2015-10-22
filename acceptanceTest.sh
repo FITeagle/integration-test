@@ -58,6 +58,20 @@ if [ $RET -eq 0 ]; then
        RET=$?
        echo "RET: ${RET}"
 fi
+if [ $RET -eq 0 ]; then
+       echo "Testing RDF toplogy..."
+	     java -jar jfed_cli/automated-testing.jar \
+			 --test-class be.iminds.ilabt.jfed.lowlevel.api.test.TestAggregateManager3 \
+			 --authorities-file conf/cli.authorities \
+	 		 --context-file conf/cli.rdfxml.properties \
+		 	 --group nonodelogin \
+			 --debug
+	     RET=$?
+			 echo "RET: ${RET}"
+			 if [ "1" == "$RET" ]; then
+			   RET=0
+			 fi
+fi
 
 ${TARGET}/fiteagle.sh stopJ2EE
 #rm -rf ${TARGET}

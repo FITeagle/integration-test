@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <rdf:Description rdf:about="http://localhost/resource/MotorGarage-1">
+    <ns0:hasComponentName xmlns:ns0="http://open-multinet.info/ontology/omn-lifecycle#">MotorGarage-1</ns0:hasComponentName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-multinet.info/example#demo-motor-1">
+    <rdf:type rdf:resource="http://open-multinet.info/ontology/omn-resource#Node"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-multinet.info/example#demo-motor-1">
+    <rdf:type rdf:resource="http://open-multinet.info/ontology/resource/motor#Motor"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-multinet.info/example#demo-motor-1">
+    <ns0:label xmlns:ns0="http://www.w3.org/2000/01/rdf-schema#">demo-motor-1</ns0:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-multinet.info/example#demo-motor-1">
+    <ns0:isResourceOf xmlns:ns0="http://open-multinet.info/ontology/omn#" rdf:resource="urn:uuid:93594416-21d2-4c80-8220-be5593682eaf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-multinet.info/example#demo-motor-1">
+    <ns0:hasComponentID xmlns:ns0="http://open-multinet.info/ontology/omn-lifecycle#">urn:publicid:IDN+localhost+node+http%3A%2F%2Flocalhost%2Fresource%2FMotorGarage-1</ns0:hasComponentID>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-multinet.info/example#demo-motor-1">
+    <ns0:hasID xmlns:ns0="http://open-multinet.info/ontology/omn-lifecycle#">demo-motor-1</ns0:hasID>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-multinet.info/example#demo-motor-1">
+    <ns0:implementedBy xmlns:ns0="http://open-multinet.info/ontology/omn-lifecycle#" rdf:resource="http://localhost/resource/MotorGarage-1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-multinet.info/example#demo-motor-1">
+    <ns0:managedBy xmlns:ns0="http://open-multinet.info/ontology/omn-lifecycle#" rdf:resource="urn:publicid:IDN+localhost+authority+cm"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-multinet.info/example#demo-motor-1">
+    <ns0:hasSliverType xmlns:ns0="http://open-multinet.info/ontology/omn-resource#" rdf:resource="urn:uuid:26568f0a-d0c0-4858-8888-c0c2d72a9a5f"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn:uuid:26568f0a-d0c0-4858-8888-c0c2d72a9a5f">
+    <rdf:type rdf:resource="http://open-multinet.info/ontology/omn-resource#SliverType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn:uuid:26568f0a-d0c0-4858-8888-c0c2d72a9a5f">
+    <ns0:hasSliverName xmlns:ns0="http://open-multinet.info/ontology/omn-lifecycle#">http://open-multinet.info/ontology/resource/motor#Motor</ns0:hasSliverName>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn:uuid:93594416-21d2-4c80-8220-be5593682eaf">
+    <rdf:type rdf:resource="http://open-multinet.info/ontology/omn#Topology"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn:uuid:93594416-21d2-4c80-8220-be5593682eaf">
+    <rdf:type rdf:resource="http://open-multinet.info/ontology/omn-lifecycle#Request"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn:uuid:93594416-21d2-4c80-8220-be5593682eaf">
+    <ns0:label xmlns:ns0="http://www.w3.org/2000/01/rdf-schema#">Request</ns0:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn:uuid:93594416-21d2-4c80-8220-be5593682eaf">
+    <ns0:hasResource xmlns:ns0="http://open-multinet.info/ontology/omn#" rdf:resource="http://open-multinet.info/example#demo-motor-1"/>
+  </rdf:Description>
+</rdf:RDF>
