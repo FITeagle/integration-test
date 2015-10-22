@@ -31,7 +31,7 @@ if [ $RET -eq 0 ]; then
        --context-file conf/cli.properties \
        --authorities-file conf/cli.authorities \
        -r conf/motor-network.rspec \
-       -s "urn:publicid:IDN+localhost+slice+1234" --create-slice \
+       -s "urn:publicid:IDN+localhost+slice+$(date +%s)" --create-slice \
        --debug
        RET=$?
        echo "RET: ${RET}"
