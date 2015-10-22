@@ -47,6 +47,17 @@ if [ $RET -gt 0 ]; then
 	RET=$?
 	echo "RET: ${RET}"
 fi
+if [ $RET -eq 0 ]; then
+       echo "Testing more toplogies..."
+       java -jar jfed_cli/experimenter-cli.jar create \
+       --context-file conf/cli.properties \
+       --authorities-file conf/cli.authorities \
+       -r conf/motor-network.rspec \
+       -s "urn:publicid:IDN+localhost+slice+1234" --create-slice \
+       --debug
+       RET=$?
+       echo "RET: ${RET}"
+fi
 
 ${TARGET}/fiteagle.sh stopJ2EE
 #rm -rf ${TARGET}

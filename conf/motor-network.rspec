@@ -1,0 +1,128 @@
+<?xml version='1.0'?>
+<rspec xmlns="http://www.geni.net/resources/rspec/3" type="request" generated_by="jFed RSpec Editor" generated="2015-09-22T17:44:00.481+02:00" xmlns:emulab="http://www.protogeni.net/resources/rspec/ext/emulab/1" xmlns:jfedBonfire="http://jfed.iminds.be/rspec/ext/jfed-bonfire/1" xmlns:delay="http://www.protogeni.net/resources/rspec/ext/delay/1" xmlns:jfed-command="http://jfed.iminds.be/rspec/ext/jfed-command/1" xmlns:client="http://www.protogeni.net/resources/rspec/ext/client/1" xmlns:jfed-ssh-keys="http://jfed.iminds.be/rspec/ext/jfed-ssh-keys/1" xmlns:jfed="http://jfed.iminds.be/rspec/ext/jfed/1" xmlns:ns2="http://demo.fiteagle.org/monitoring" xmlns:sharedvlan="http://www.protogeni.net/resources/rspec/ext/shared-vlan/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.geni.net/resources/rspec/3 http://www.geni.net/resources/rspec/3/request.xsd ">
+  <node client_id="motor-1" component_manager_id="urn:publicid:IDN+localhost+authority+cm" component_id="urn:publicid:IDN+localhost+node+http%3A%2F%2Flocalhost%2Fresource%2FMotorGarage-1" component_name="MotorGarage-1">
+    <sliver_type name="http://open-multinet.info/ontology/resource/motor#Motor"/>
+    <location xmlns="http://jfed.iminds.be/rspec/ext/jfed/1" x="410.0" y="185.0"/>
+    <interface client_id="f4f-demo-gent-2015:if0">
+      <ip address="192.168.0.2" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+    <interface client_id="motor-1:if1">
+      <ip address="192.168.4.2" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+    <interface client_id="motor-1:if2">
+      <ip address="192.168.5.2" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+  </node>
+  <node client_id="motor-2" component_manager_id="urn:publicid:IDN+localhost+authority+cm" component_id="urn:publicid:IDN+localhost+node+http%3A%2F%2Flocalhost%2Fresource%2FMotorGarage-1" component_name="MotorGarage-1">
+    <sliver_type name="http://open-multinet.info/ontology/resource/motor#Motor"/>
+    <location xmlns="http://jfed.iminds.be/rspec/ext/jfed/1" x="310.0" y="300.47005383792515"/>
+    <interface client_id="f4f-demo-gent-2015-2:if0">
+      <ip address="192.168.0.1" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+    <interface client_id="motor-2:if1">
+      <ip address="192.168.5.1" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+    <interface client_id="motor-2:if2">
+      <ip address="192.168.6.2" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+  </node>
+  <node client_id="motor-3" component_manager_id="urn:publicid:IDN+localhost+authority+cm" component_id="urn:publicid:IDN+localhost+node+http%3A%2F%2Flocalhost%2Fresource%2FMotorGarage-1" component_name="MotorGarage-1">
+    <sliver_type name="http://open-multinet.info/ontology/resource/motor#Motor"/>
+    <location xmlns="http://jfed.iminds.be/rspec/ext/jfed/1" x="110.00000000000006" y="300.47005383792515"/>
+    <interface client_id="motor-3:if0">
+      <ip address="192.168.0.3" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+    <interface client_id="motor-3:if1">
+      <ip address="192.168.1.2" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+    <interface client_id="motor-3:if2">
+      <ip address="192.168.6.1" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+  </node>
+  <node client_id="motor-4" component_manager_id="urn:publicid:IDN+localhost+authority+cm" component_id="urn:publicid:IDN+localhost+node+http%3A%2F%2Flocalhost%2Fresource%2FMotorGarage-1" component_name="MotorGarage-1">
+    <sliver_type name="http://open-multinet.info/ontology/resource/motor#Motor"/>
+    <location xmlns="http://jfed.iminds.be/rspec/ext/jfed/1" x="10.0" y="185.00000000000003"/>
+    <interface client_id="motor-4:if0">
+      <ip address="192.168.0.6" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+    <interface client_id="motor-4:if1">
+      <ip address="192.168.1.1" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+    <interface client_id="motor-4:if2">
+      <ip address="192.168.2.1" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+  </node>
+  <node client_id="motor-5" component_manager_id="urn:publicid:IDN+localhost+authority+cm" component_id="urn:publicid:IDN+localhost+node+http%3A%2F%2Flocalhost%2Fresource%2FMotorGarage-1" component_name="MotorGarage-1">
+    <sliver_type name="http://open-multinet.info/ontology/resource/motor#Motor"/>
+    <location xmlns="http://jfed.iminds.be/rspec/ext/jfed/1" x="109.99999999999991" y="69.52994616207486"/>
+    <interface client_id="motor-5:if0">
+      <ip address="192.168.0.4" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+    <interface client_id="motor-5:if1">
+      <ip address="192.168.2.2" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+    <interface client_id="motor-5:if2">
+      <ip address="192.168.3.1" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+  </node>
+  <node client_id="motor-6" component_manager_id="urn:publicid:IDN+localhost+authority+cm" component_id="urn:publicid:IDN+localhost+node+http%3A%2F%2Flocalhost%2Fresource%2FMotorGarage-1" component_name="MotorGarage-1">
+    <sliver_type name="http://open-multinet.info/ontology/resource/motor#Motor"/>
+    <location xmlns="http://jfed.iminds.be/rspec/ext/jfed/1" x="309.9999999999999" y="69.5299461620748"/>
+    <interface client_id="motor-6:if0">
+      <ip address="192.168.0.5" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+    <interface client_id="motor-6:if1">
+      <ip address="192.168.3.2" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+    <interface client_id="motor-6:if2">
+      <ip address="192.168.4.1" netmask="255.255.255.0" type="ipv4"/>
+    </interface>
+  </node>
+  <link client_id="link0">
+    <component_manager name="urn:publicid:IDN+localhost+authority+cm"/>
+    <interface_ref client_id="f4f-demo-gent-2015-2:if0"/>
+    <interface_ref client_id="f4f-demo-gent-2015:if0"/>
+    <interface_ref client_id="motor-3:if0"/>
+    <interface_ref client_id="motor-5:if0"/>
+    <interface_ref client_id="motor-6:if0"/>
+    <interface_ref client_id="motor-4:if0"/>
+    <link_type name="http://open-multinet.info/ontology/resource/link#lan"/>
+  </link>
+  <link client_id="link1">
+    <component_manager name="urn:publicid:IDN+localhost+authority+cm"/>
+    <interface_ref client_id="motor-4:if1"/>
+    <interface_ref client_id="motor-3:if1"/>
+    <link_type name="http://open-multinet.info/ontology/resource/link#lan"/>
+  </link>
+  <link client_id="link2">
+    <component_manager name="urn:publicid:IDN+localhost+authority+cm"/>
+    <interface_ref client_id="motor-4:if2"/>
+    <interface_ref client_id="motor-5:if1"/>
+    <link_type name="http://open-multinet.info/ontology/resource/link#lan"/>
+  </link>
+  <link client_id="link3">
+    <component_manager name="urn:publicid:IDN+localhost+authority+cm"/>
+    <interface_ref client_id="motor-5:if2"/>
+    <interface_ref client_id="motor-6:if1"/>
+    <link_type name="http://open-multinet.info/ontology/resource/link#lan"/>
+  </link>
+  <link client_id="link4">
+    <component_manager name="urn:publicid:IDN+localhost+authority+cm"/>
+    <interface_ref client_id="motor-6:if2"/>
+    <interface_ref client_id="motor-1:if1"/>
+    <link_type name="http://open-multinet.info/ontology/resource/link#lan"/>
+  </link>
+  <link client_id="link5">
+    <component_manager name="urn:publicid:IDN+localhost+authority+cm"/>
+    <interface_ref client_id="motor-2:if1"/>
+    <interface_ref client_id="motor-1:if2"/>
+    <link_type name="http://open-multinet.info/ontology/resource/link#lan"/>
+  </link>
+  <link client_id="link6">
+    <component_manager name="urn:publicid:IDN+localhost+authority+cm"/>
+    <interface_ref client_id="motor-3:if2"/>
+    <interface_ref client_id="motor-2:if2"/>
+    <link_type name="http://open-multinet.info/ontology/resource/link#lan"/>
+  </link>
+  <jfed-command:experimentBarrierSegment orderNumber="0" tag="Barrier segment 0"/>
+</rspec>
