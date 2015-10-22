@@ -19,15 +19,44 @@ java \
   --debug \
   --context-file conf/cli.properties \
   --group nonodelogin
-#createsliver
 
 RET=$?
-echo "jfed error code ${RET}"
 
 DIR=$(ls -td test-result*|head -n1)
+if [[ "$OSTYPE" == "darwin"* ]]; then open "./${DIR}/result.html" ; fi
+
+if [ $RET -eq 0 ]; then
+       echo "Testing more toplogies..."
+       java -jar jfed_cli/experimenter-cli.jar create \
+       --context-file conf/cli.properties \
+       --authorities-file conf/cli.authorities \
+       -r conf/motor-network.rspec \
+       -s "urn:publicid:IDN+localhost+slice+1234" --create-slice \
+       --debug
+       RET=$?
+       echo "RET: ${RET}"
+fi
+
+if [ $RET -eq 0 ]; then
+       echo "Testing RDF toplogy..."
+	     java -jar jfed_cli/automated-testing.jar \
+			 --test-class be.iminds.ilabt.jfed.lowlevel.api.test.TestAggregateManager3 \
+			 --authorities-file conf/cli.authorities \
+	 		 --context-file conf/cli.rdfxml.properties \
+		 	 --group nonodelogin \
+			 --debug
+	     RET=$?
+			 echo "RET: ${RET}"
+			 if [ "1" == "$RET" ]; then
+			   RET=0
+			 fi
+fi
+
+echo "jfed error code ${RET}"
+
 #if [[ $(grep " failheader" -c ./${DIR}/result.html) > 0 ]]; then
 if [[ $RET -gt 0 ]]; then
-  
+
   echo "test failed!"
 
   if [[ -f /.dockerenv ]] && [[ -d /opt/results ]]; then
@@ -53,7 +82,5 @@ if [[ $RET -gt 0 ]]; then
 else
   echo "test OK"
 fi
-
-if [[ "$OSTYPE" == "darwin"* ]]; then open "./${DIR}/result.html" ; fi
 
 exit $RET
