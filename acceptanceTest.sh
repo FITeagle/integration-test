@@ -12,6 +12,7 @@ curl -sSL https://github.com/FITeagle/bootstrap/raw/master/fiteagle.sh -o fiteag
 chmod +x ${TARGET}/fiteagle.sh
 ${TARGET}/fiteagle.sh init
 cp ${TARGET}/../conf/MotorGarage.properties ${HOME}/.fiteagle/
+cp ${TARGET}/../conf/NetworkingAdapter.properties ${HOME}/.fiteagle/
 ${TARGET}/fiteagle.sh startJ2EE sleep-20 deployFT2binary deployFT2sfaBinary
 
 cd ${PWD}
