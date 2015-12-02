@@ -18,7 +18,9 @@ branches:
   - binary-only
 script:
 - mkdir -p "${HOME}/.fiteagle"; cp ${TRAVIS_BUILD_DIR}/conf/MotorGarage.properties ${HOME}/.fiteagle/
-- if [[ ${_VARIANT} = "src" ]]; then mkdir test; cd test; curl -fsSkL fiteagle.org/bootstrap -o fiteagle.sh && bash fiteagle.sh init deployFT2 deployFT2sfa testFT2sfa; elif [[ ${_VARIANT} = "bin" ]]; then ./acceptanceTest.sh; fi
+- if [[ ${_VARIANT} = "src" ]]; then mkdir test; cd test; curl -fsSkL fiteagle.org/bootstrap -o fiteagle.sh && bash fiteagle.sh init deployFT2 deployFT2sfa; else true; fi
+- travis_retry if [[ ${_VARIANT} = "src" ]]; then cd test; bootstrap/fiteagle.sh testFT2sfa; else true; fi
+- if [[ ${_VARIANT} = "bin" ]]; then ./acceptanceTest.sh; else true; fi
 after_success:
 - curl "http://demo.fiteagle.org/trigger.php?c=integration-${_VARIANT}"
 notifications:
