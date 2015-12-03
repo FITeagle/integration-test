@@ -10,10 +10,10 @@ fold_begin () {
 }
 
 fold_end () {
-	echo "travis_fold:stop:${1}"
+	echo "travis_fold:end:${1}"
 }
 
-fold_begin Prepare
+fold_begin prepare Prepare
 PWD=$(pwd)
 #TARGET=$(mktemp -d 2>/dev/null || mktemp -d -t "fiteagle")
 TARGET="${PWD}/build"
@@ -25,19 +25,19 @@ cd ${TARGET}
 export WILDFLY_HOME="${TARGET}/server/wildfly"
 curl -sSL https://github.com/FITeagle/bootstrap/raw/master/fiteagle.sh -o fiteagle.sh
 chmod +x ${TARGET}/fiteagle.sh
-fold_end Prepare
+fold_end prepare
 
-fold_begin Init
+fold_begin init Init
 ${TARGET}/fiteagle.sh init
 cp ${TARGET}/../conf/MotorGarage.properties ${HOME}/.fiteagle/
 cp ${TARGET}/../conf/NetworkingAdapter.properties ${HOME}/.fiteagle/
-fold_end Init
+fold_end init
 
-Fold_begin deploy "deployFT2binary deployFT2sfaBinary"
+fold_begin deploy "deployFT2binary deployFT2sfaBinary"
 ${TARGET}/fiteagle.sh startJ2EE sleep-20 deployFT2binary deployFT2sfaBinary
-Fold_end deploy
+fold_end deploy
 
-Fold_begin test1 "1st jFed test"
+fold_begin test1 "1st jFed test"
 cd ${PWD}
 pwd
 ## HACK
@@ -54,14 +54,14 @@ while [[ ! $(./xmlrpc-client.sh -t https://localhost:8443/sfa/api/am/v3 GetVersi
 		echo timeout !
 		${TARGET}/fiteagle.sh stopJ2EE
 		screen -S wildfly -X kill
-		Fold_end test1
+		fold_end test1
 		exit 1
 	fi
 done
 ./runJfed_local.sh
 RET=$?
 echo "RET: ${RET}"
-Fold_end test1
+fold_end test1
 
 if [ $RET -gt 0 ]; then
 	Fold_begin test2 "2nd jFed test"
@@ -73,7 +73,7 @@ if [ $RET -gt 0 ]; then
 	./runJfed_local.sh
 	RET=$?
 	echo "RET: ${RET}"
-	Fold_end test2
+	fold_end test2
 fi
 
 ${TARGET}/fiteagle.sh stopJ2EE
