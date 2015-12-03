@@ -18,8 +18,8 @@ branches:
   - binary-only
 script:
 - mkdir -p "${HOME}/.fiteagle"; cp ${TRAVIS_BUILD_DIR}/conf/MotorGarage.properties ${HOME}/.fiteagle/
-- if [[ ${_VARIANT} = "src" ]]; then echo "travis_fold:start:prepare"; mkdir test; cd test; curl -fsSkL fiteagle.org/bootstrap -o fiteagle.sh && bash fiteagle.sh init deployFT2 deployFT2sfa; echo "travis_fold:stop:prepare"; else true; fi
-- if [[ ${_VARIANT} = "src" ]]; then echo "travis_fold:start:testsfa"; cd test; travis_retry bootstrap/fiteagle.sh testFT2sfa; echo "travis_fold:stop:testsfa"; else true; fi
+- if [[ ${_VARIANT} = "src" ]]; then echo -en "travis_fold:start:prepare\r"; mkdir test; cd test; curl -fsSkL fiteagle.org/bootstrap -o fiteagle.sh && bash fiteagle.sh init deployFT2 deployFT2sfa; echo -en "travis_fold:end:prepare\r"; else true; fi
+- if [[ ${_VARIANT} = "src" ]]; then echo -en "travis_fold:start:testsfa\r"; cd test; travis_retry bootstrap/fiteagle.sh testFT2sfa; echo -en "travis_fold:end:testsfa\r"; else true; fi
 - if [[ ${_VARIANT} = "bin" ]]; then ./acceptanceTest.sh; else true; fi
 after_success:
 - curl "http://demo.fiteagle.org/trigger.php?c=integration-${_VARIANT}"
