@@ -2,8 +2,7 @@
 
 fold_begin () {
 	echo -en "travis_fold:start:${1}\r"
-	#echo "travis_fold:start:${1}"
-	if [ -z $2 ]; then 
+	if [ -z "$2" ]; then 
 		echo "${1}: "
 	else
 		echo "${2}: "
