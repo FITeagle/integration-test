@@ -64,7 +64,7 @@ echo "RET: ${RET}"
 fold_end test1
 
 if [ $RET -gt 0 ]; then
-	Fold_begin test2 "2nd jFed test"
+	fold_begin test2 "2nd jFed test"
 	echo "retry failed test...."
 	echo "touching .war files.."
 	[ -f ${WILDFLY_HOME}/standalone/deployments/motor.war ] && touch ${WILDFLY_HOME}/standalone/deployments/motor.war
