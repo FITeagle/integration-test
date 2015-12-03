@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 fold_begin () {
-	echo "travis_fold:start:${1}"
+	echo -en "travis_fold:start:${1}\r"
+	#echo "travis_fold:start:${1}"
 	if [ -z $2 ]; then 
 		echo "${1}: "
 	else
@@ -10,7 +11,7 @@ fold_begin () {
 }
 
 fold_end () {
-	echo "travis_fold:end:${1}"
+	echo -en "travis_fold:end:${1}\r"
 }
 
 fold_begin prepare Prepare
