@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-fold_begin() {}
+fold_begin () {
 	echo "travis_fold:start:${1}"
 	if [ -z $2 ]; then 
 		echo "${1}: "
@@ -9,7 +9,7 @@ fold_begin() {}
 	fi
 }
 
-fold_end() {}
+fold_end () {
 	echo "travis_fold:stop:${1}"
 }
 
