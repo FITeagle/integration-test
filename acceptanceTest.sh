@@ -13,7 +13,6 @@ fold_end () {
 	echo -en "travis_fold:end:${1}\r"
 }
 
-fold_begin prepare Prepare
 PWD=$(pwd)
 #TARGET=$(mktemp -d 2>/dev/null || mktemp -d -t "fiteagle")
 TARGET="${PWD}/build"
@@ -25,7 +24,6 @@ cd ${TARGET}
 export WILDFLY_HOME="${TARGET}/server/wildfly"
 curl -sSL https://github.com/FITeagle/bootstrap/raw/master/fiteagle.sh -o fiteagle.sh
 chmod +x ${TARGET}/fiteagle.sh
-fold_end prepare
 
 fold_begin init Init
 ${TARGET}/fiteagle.sh init
