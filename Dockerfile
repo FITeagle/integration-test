@@ -6,4 +6,3 @@ WORKDIR /opt/fiteagle
 COPY . /opt/fiteagle/integration-test/
 
 CMD cd /opt/fiteagle/integration-test; ./acceptanceTest.sh
-
