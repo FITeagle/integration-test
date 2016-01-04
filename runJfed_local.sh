@@ -77,12 +77,12 @@ if [[ $RET -gt 0 ]]; then
     #[ -f ${DIR}/result.html ] && curl http://foo:bar@demo.fiteagle.org:8081/paste -X POST -T ${DIR}/result.html
     for resultfile in $(ls -t test-result*/result.html); do
       echo; echo "${resultfile}: "
-      curl http://foo:bar@demo.fiteagle.org:8081/paste -X POST -T ${resultfile}
+      curl http://foo:bar@trescimo.av.tu-berlin.de:8081/paste -X POST -T ${resultfile}
     done
     echo; echo "fiteagle.log: "
-    [ -f ${WILDFLY_HOME}server/wildfly/standalone/log/fiteagle.log ] && curl http://foo:bar@demo.fiteagle.org:8081/paste -X POST -T ${WILDFLY_HOME}server/wildfly/standalone/log/fiteagle.log
+    [ -f ${WILDFLY_HOME}server/wildfly/standalone/log/fiteagle.log ] && curl http://foo:bar@trescimo.av.tu-berlin.de:8081/paste -X POST -T ${WILDFLY_HOME}server/wildfly/standalone/log/fiteagle.log
     echo; echo "server.log: "
-    [ -f ${WILDFLY_HOME}/standalone/log/server.log ] && curl http://foo:bar@demo.fiteagle.org:8081/paste -X POST -T "${WILDFLY_HOME}/standalone/log/server.log"
+    [ -f ${WILDFLY_HOME}/standalone/log/server.log ] && curl http://foo:bar@trescimo.av.tu-berlin.de:8081/paste -X POST -T "${WILDFLY_HOME}/standalone/log/server.log"
     printf "\n#############################\n## end ######################\n#############################\n\n"
   fi
 
